@@ -3,7 +3,7 @@ package fotistsiou.java.tic_tac_toe.step_2;
 import java.util.Scanner;
 
 /**
- * The user is the gamemaster!
+ * The user is the GameMaster.
  * ---------------------------
  * Description
  * Our program should be able to display the grid at all stages of the game.
