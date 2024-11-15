@@ -24,20 +24,17 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        // 1. Initialize an empty 3x3 2D character array
+        // 1. Print an empty grid at the beginning of the game.
         char[][] board = new char[3][3];
         for (int i = 0; i < 3; i++) {
             Arrays.fill(board[i], ' ');
         }
-
-        // 2. Prints the beginning board.
         printBoard(board);
 
-        // 3. Prompt the user to make a move & analyze user input
+        // 2. Create a game loop with user movements and analyze them.
+        // 3. Ends the game when someone wins or there is a draw.
         char player = 'X';
         analyzesTheMove(board, player);
-
-        // 4. Prints the modified board.
         printBoard(board);
     }
 
@@ -57,36 +54,30 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         int xAxis, yAxis;
         while (true) {
-            // Check 1 for xAxis: The type of input
             if (scanner.hasNextInt()) {
                 xAxis = scanner.nextInt();
 
-                // Check 2 for xAxis: The grid boundaries
                 if (xAxis < 1 || xAxis > 3) {
                     System.out.println("Coordinates should be from 1 to 3!");
                     scanner.nextLine();
                     continue;
                 }
 
-                // Check 1 for yAxis: The type of input
                 if (scanner.hasNextInt()) {
                     yAxis = scanner.nextInt();
 
-                    // Check 2 for yAxis: The grid boundaries
                     if (yAxis < 1 || yAxis > 3) {
                         System.out.println("Coordinates should be from 1 to 3!");
                         scanner.nextLine();
                         continue;
                     }
 
-                    // Check 3 for xAxis & yAxis: Cell Occupied
                     if (board[xAxis-1][yAxis-1] != ' ') {
                         System.out.println("This cell is occupied! Choose another one!");
                         scanner.nextLine();
                         continue;
                     }
 
-                    // Add the player character to the cell coordinates of the user input
                     board[xAxis-1][yAxis-1] = player;
                     break;
                 } else {
