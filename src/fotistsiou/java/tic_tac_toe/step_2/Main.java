@@ -35,7 +35,7 @@ public class Main {
         char seventh = input.charAt(6);
         char eighth = input.charAt(7);
         char ninth = input.charAt(8);
-        
+
         System.out.println("---------");
         System.out.println("| " + first + " " + second + " " + third + " |");
         System.out.println("| " + fourth + " " + fifth + " " + sixth + " |");
