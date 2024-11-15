@@ -28,17 +28,11 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
+        // 1. Take a string entered by the user and print the game grid
         Scanner scanner = new Scanner(System.in);
-
         String input = scanner.nextLine();
-
+        scanner.close();
         char[][] board = new char[3][3];
-        int xCount = 0;
-        int oCount = 0;
-        boolean xWins = false;
-        boolean oWins = false;
-        boolean hasEmpty = false;
-
         System.out.println("---------");
         int index = 0;
         for (int i = 0; i < 3; i++) {
@@ -46,18 +40,26 @@ public class Main {
             for (int j = 0; j < 3; j++) {
                 board[i][j] = input.charAt(index++);
                 System.out.print(board[i][j] + " ");
-
-                if (board[i][j] == 'X') xCount++;
-                if (board[i][j] == 'O') oCount++;
-                if (board[i][j] == '_') hasEmpty = true;
             }
             System.out.println("|");
         }
         System.out.println("---------");
 
+        // 2. Analyze the game state and print the result.
+        // Define variables
+        int xCount = 0, oCount = 0;
+        boolean xWins = false, oWins = false, hasEmpty = false;
+        String status = "";
+        // Check if game is finished
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (board[i][j] == 'X') xCount++;
+                if (board[i][j] == 'O') oCount++;
+                if (board[i][j] == '_') hasEmpty = true;
+            }
+        }
         // Check rows and columns for a win
         for (int i = 0; i < 3; i++) {
-            // Check rows and columns for a win
             if (board[i][0] == board[i][1] && board[i][1] == board[i][2]) {
                 if (board[i][0] == 'X') xWins = true;
                 if (board[i][0] == 'O') oWins = true;
@@ -67,7 +69,6 @@ public class Main {
                 if (board[0][i] == 'O') oWins = true;
             }
         }
-
         // Check diagonals for a win
         if (board[0][0] == board[1][1] && board[1][1] == board[2][2]) {
             if (board[0][0] == 'X') xWins = true;
@@ -77,9 +78,7 @@ public class Main {
             if (board[0][2] == 'X') xWins = true;
             if (board[0][2] == 'O') oWins = true;
         }
-
         // Determine game status
-        String status;
         if ((xWins && oWins) || Math.abs(xCount - oCount) > 1) {
             status = "Impossible";
         } else if (xWins) {
@@ -91,9 +90,7 @@ public class Main {
         } else {
             status = "Draw";
         }
-
+        // Print the result
         System.out.println(status);
-
-        scanner.close();
     }
 }
