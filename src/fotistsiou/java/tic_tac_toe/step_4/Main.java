@@ -43,8 +43,10 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        // Prompt the user to make a 3x3 grid and output this grid
+        // 1. Get the initial 3x3 grid from the user input
         String input = scanner.nextLine();
+
+        // 2. Output this 3x3 grid
         char[][] board = new char[3][3];
         System.out.println("---------");
         int index = 0;
@@ -59,7 +61,8 @@ public class Main {
         }
         System.out.println("---------");
 
-        // Prompt the user to make a move & analyze user input
+        // 3. Prompt the user to make a move
+        // 4. Analyze user input.
         int xAxis, yAxis;
         while (true) {
             // Check 1 for xAxis: The type of input
@@ -91,8 +94,6 @@ public class Main {
                         continue;
                     }
 
-                    // Add the player character to the cell coordinates of the user input
-                    board[xAxis-1][yAxis-1] = 'X';
                     break;
                 } else {
                     System.out.println("You should enter numbers!");
@@ -104,7 +105,8 @@ public class Main {
             }
         }
 
-        // Output the grid with user input
+        // 5. Update the grid to include the user's move and print the updated grid
+        board[xAxis-1][yAxis-1] = 'X';
         System.out.println("---------");
         for (int i = 0; i < 3; i++) {
             System.out.print("| ");
