@@ -21,8 +21,10 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        String input = sc.nextLine();
+        Scanner scanner = new Scanner(System.in);
+
+        String input = scanner.nextLine();
+
         char first = input.charAt(0);
         char second = input.charAt(1);
         char third = input.charAt(2);
@@ -32,10 +34,13 @@ public class Main {
         char seventh = input.charAt(6);
         char eighth = input.charAt(7);
         char ninth = input.charAt(8);
+
         System.out.println("---------");
         System.out.println("| " + first + " " + second + " " + third + " |");
         System.out.println("| " + fourth + " " + fifth + " " + sixth + " |");
         System.out.println("| " + seventh + " " + eighth + " " + ninth + " |");
         System.out.println("---------");
+
+        scanner.close();
     }
 }
