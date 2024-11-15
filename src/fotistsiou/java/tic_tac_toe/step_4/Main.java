@@ -41,10 +41,10 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
         // Prompt the user to make a 3x3 grid and output this grid
-        String input = sc.nextLine();
+        String input = scanner.nextLine();
         char[][] board = new char[3][3];
         System.out.println("---------");
         int index = 0;
@@ -63,31 +63,31 @@ public class Main {
         int xAxis, yAxis;
         while (true) {
             // Check 1 for xAxis: The type of input
-            if (sc.hasNextInt()) {
-                xAxis = sc.nextInt();
+            if (scanner.hasNextInt()) {
+                xAxis = scanner.nextInt();
 
                 // Check 2 for xAxis: The grid boundaries
                 if (xAxis < 1 || xAxis > 3) {
                     System.out.println("Coordinates should be from 1 to 3!");
-                    sc.nextLine();
+                    scanner.nextLine();
                     continue;
                 }
 
                 // Check 1 for yAxis: The type of input
-                if (sc.hasNextInt()) {
-                    yAxis = sc.nextInt();
+                if (scanner.hasNextInt()) {
+                    yAxis = scanner.nextInt();
 
                     // Check 2 for yAxis: The grid boundaries
                     if (yAxis < 1 || yAxis > 3) {
                         System.out.println("Coordinates should be from 1 to 3!");
-                        sc.nextLine();
+                        scanner.nextLine();
                         continue;
                     }
 
                     // Check 3 for xAxis & yAxis: Cell Occupied
                     if (board[xAxis-1][yAxis-1] != ' ') {
                         System.out.println("This cell is occupied! Choose another one!");
-                        sc.nextLine();
+                        scanner.nextLine();
                         continue;
                     }
 
@@ -96,11 +96,11 @@ public class Main {
                     break;
                 } else {
                     System.out.println("You should enter numbers!");
-                    sc.nextLine();
+                    scanner.nextLine();
                 }
             } else {
                 System.out.println("You should enter numbers!");
-                sc.nextLine();
+                scanner.nextLine();
             }
         }
 
