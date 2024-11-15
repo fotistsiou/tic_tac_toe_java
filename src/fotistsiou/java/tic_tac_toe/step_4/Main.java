@@ -60,37 +60,38 @@ public class Main {
         System.out.println("---------");
 
         // Prompt the user to make a move & analyze user input
-        int xAxis = 0, yAxis = 0;
+        int xAxis, yAxis;
         while (true) {
-            // Check 1: The type of input
+            // Check 1 for xAxis: The type of input
             if (sc.hasNextInt()) {
                 xAxis = sc.nextInt();
 
-                // Check 2: The grid boundaries
+                // Check 2 for xAxis: The grid boundaries
                 if (xAxis < 1 || xAxis > 3) {
                     System.out.println("Coordinates should be from 1 to 3!");
                     sc.nextLine();
                     continue;
                 }
 
-                // Check 1: The type of input
+                // Check 1 for yAxis: The type of input
                 if (sc.hasNextInt()) {
                     yAxis = sc.nextInt();
 
-                    // Check 2: The grid boundaries
+                    // Check 2 for yAxis: The grid boundaries
                     if (yAxis < 1 || yAxis > 3) {
                         System.out.println("Coordinates should be from 1 to 3!");
                         sc.nextLine();
                         continue;
                     }
 
-                    // Check 3: Cell Occupied
+                    // Check 3 for xAxis & yAxis: Cell Occupied
                     if (board[xAxis-1][yAxis-1] != ' ') {
                         System.out.println("This cell is occupied! Choose another one!");
                         sc.nextLine();
                         continue;
                     }
 
+                    // Add the player character to the cell coordinates of the user input
                     board[xAxis-1][yAxis-1] = 'X';
                     break;
                 } else {
