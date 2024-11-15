@@ -12,18 +12,19 @@ import java.util.Scanner;
  * ---------------------------
  * Objectives
  * In this stage, you will write a program that:
- * 1. Reads a string of 9 symbols from the input and displays them to the user in a 3x3 grid.
- *    The grid can contain only X, O and _ symbols.
- * 2. Outputs a line of dashes --------- above and below the grid, adds a pipe | symbol to the beginning
- *    and end of each line of the grid, and adds a space between all characters in the grid.
+ * Reads a string of 9 symbols from the input and displays them to the user in a 3x3 grid.
+ * The grid can contain only X, O and _ symbols.
+ * Outputs a line of dashes --------- above and below the grid,
+ * adds a pipe | symbol to the beginning and end of each line of the grid,
+ * and adds a space between all characters in the grid.
  */
 
 public class Main {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
         String input = scanner.nextLine();
+        scanner.close();
 
         char first = input.charAt(0);
         char second = input.charAt(1);
@@ -34,13 +35,11 @@ public class Main {
         char seventh = input.charAt(6);
         char eighth = input.charAt(7);
         char ninth = input.charAt(8);
-
+        
         System.out.println("---------");
         System.out.println("| " + first + " " + second + " " + third + " |");
         System.out.println("| " + fourth + " " + fifth + " " + sixth + " |");
         System.out.println("| " + seventh + " " + eighth + " " + ninth + " |");
         System.out.println("---------");
-
-        scanner.close();
     }
 }
