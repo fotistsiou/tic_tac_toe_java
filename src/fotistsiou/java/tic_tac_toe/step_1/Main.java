@@ -21,6 +21,7 @@ package fotistsiou.java.tic_tac_toe.step_1;
 public class Main {
 
     public static void main(String[] args) {
+        // Print the game grid
         System.out.println("X O X");
         System.out.println("O X O");
         System.out.println("X X O");
