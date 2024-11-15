@@ -22,10 +22,10 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
+        // Read a string of 9 symbols from the input
         Scanner scanner = new Scanner(System.in);
         String input = scanner.nextLine();
         scanner.close();
-
         char first = input.charAt(0);
         char second = input.charAt(1);
         char third = input.charAt(2);
@@ -36,6 +36,7 @@ public class Main {
         char eighth = input.charAt(7);
         char ninth = input.charAt(8);
 
+        // Display the symbols in a 3x3 grid
         System.out.println("---------");
         System.out.println("| " + first + " " + second + " " + third + " |");
         System.out.println("| " + fourth + " " + fifth + " " + sixth + " |");
