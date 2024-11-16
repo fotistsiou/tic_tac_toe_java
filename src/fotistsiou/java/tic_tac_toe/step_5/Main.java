@@ -26,22 +26,26 @@ public class Main {
     public static void main(String[] args) {
         // 1. Print an empty grid at the beginning of the game.
         char[][] board = new char[3][3];
-        for (int i = 0; i < 3; i++) {
-            Arrays.fill(board[i], ' ');
-        }
+        initiateBoard(board);
         printBoard(board);
 
         // 2. Create a game loop with user movements and analyze them.
         // 3. Ends the game when someone wins or there is a draw.
         char player = 'X';
         String status = "";
-        while (!status.contains("wins") && !status.equals("Game not finished")) {
+        while (!status.contains("wins") && !status.equals("Draw")) {
             analyzeMove(board, player);
+            player = selectPlayer(player);
             printBoard(board);
             status = setStatus(board);
-            player = selectPlayer(player);
         }
         System.out.println(status);
+    }
+
+    static void initiateBoard(char[][] board) {
+        for (int i = 0; i < 3; i++) {
+            Arrays.fill(board[i], ' ');
+        }
     }
 
     static void printBoard(char[][] board) {
@@ -115,7 +119,7 @@ public class Main {
             for (int j = 0; j < 3; j++) {
                 if (board[i][j] == 'X') xCount++;
                 if (board[i][j] == 'O') oCount++;
-                if (board[i][j] == '_') hasEmpty = true;
+                if (board[i][j] == ' ') hasEmpty = true;
             }
         }
 
