@@ -12,6 +12,7 @@ strategy quickly. Let’s program Tic-Tac-Toe and get playing!
 ## What you'll learn
 Once you choose a project, we'll provide you with a study plan that includes all the necessary topics from your course 
 to get it built. Here’s what awaits you:
+
 * Stage 1/5: Welcome to the battlefield!
   * To start things off, the program needs to be able to print any state of the field. You’ll write a serious multi-line 
     program using a lot of prints.
@@ -68,4 +69,4 @@ to get it built. Here’s what awaits you:
   * Stage Topics:
     * Multiple conditions: switch
 
-> **Source**: [Project of the Hyperskill.org platform](https://hyperskill.org/projects/48?track=8)
+> **Project powered by** [Hyperskill.org](https://hyperskill.org/projects/48?track=8)
