@@ -34,8 +34,14 @@ public class Main {
         // 2. Create a game loop with user movements and analyze them.
         // 3. Ends the game when someone wins or there is a draw.
         char player = 'X';
-        analyzesTheMove(board, player);
-        printBoard(board);
+        String status = "";
+        while (!status.contains("wins") && !status.equals("Game not finished")) {
+            analyzeMove(board, player);
+            printBoard(board);
+            status = setStatus(board);
+            player = selectPlayer(player);
+        }
+        System.out.println(status);
     }
 
     static void printBoard(char[][] board) {
@@ -50,44 +56,108 @@ public class Main {
         System.out.println("---------");
     }
 
-    static void analyzesTheMove(char[][] board, char player) {
+    static void analyzeMove(char[][] board, char player) {
         Scanner scanner = new Scanner(System.in);
         int xAxis, yAxis;
         while (true) {
+
+            // Check 1 for xAxis: The type of input
             if (scanner.hasNextInt()) {
                 xAxis = scanner.nextInt();
 
+                // Check 2 for xAxis: The grid boundaries
                 if (xAxis < 1 || xAxis > 3) {
                     System.out.println("Coordinates should be from 1 to 3!");
-                    scanner.nextLine();
+                    scanner.nextLine(); // Clear invalid input from the scanner buffer
                     continue;
                 }
 
+                // Check 1 for yAxis: The type of input
                 if (scanner.hasNextInt()) {
                     yAxis = scanner.nextInt();
 
+                    // Check 2 for yAxis: The grid boundaries
                     if (yAxis < 1 || yAxis > 3) {
                         System.out.println("Coordinates should be from 1 to 3!");
-                        scanner.nextLine();
+                        scanner.nextLine(); // Clear invalid input from the scanner buffer
                         continue;
                     }
 
+                    // Check 3 for xAxis & yAxis: Cell Occupied
                     if (board[xAxis-1][yAxis-1] != ' ') {
                         System.out.println("This cell is occupied! Choose another one!");
-                        scanner.nextLine();
+                        scanner.nextLine(); // Clear invalid input from the scanner buffer
                         continue;
                     }
 
+                    // Update the grid and exit from while loop
                     board[xAxis-1][yAxis-1] = player;
                     break;
                 } else {
                     System.out.println("You should enter numbers!");
-                    scanner.nextLine();
+                    scanner.nextLine(); // Clear invalid input from the scanner buffer
                 }
             } else {
                 System.out.println("You should enter numbers!");
-                scanner.nextLine();
+                scanner.nextLine(); // Clear invalid input from the scanner buffer
             }
         }
+    }
+
+    static String setStatus(char[][] board) {
+        // Define variables
+        int xCount = 0, oCount = 0;
+        boolean xWins = false, oWins = false, hasEmpty = false;
+        String status;
+
+        // Check if the game is over
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (board[i][j] == 'X') xCount++;
+                if (board[i][j] == 'O') oCount++;
+                if (board[i][j] == '_') hasEmpty = true;
+            }
+        }
+
+        // Check rows and columns for a win
+        for (int i = 0; i < 3; i++) {
+            if (board[i][0] == board[i][1] && board[i][1] == board[i][2]) {
+                if (board[i][0] == 'X') xWins = true;
+                if (board[i][0] == 'O') oWins = true;
+            }
+            if (board[0][i] == board[1][i] && board[1][i] == board[2][i]) {
+                if (board[0][i] == 'X') xWins = true;
+                if (board[0][i] == 'O') oWins = true;
+            }
+        }
+
+        // Check diagonals for a win
+        if (board[0][0] == board[1][1] && board[1][1] == board[2][2]) {
+            if (board[0][0] == 'X') xWins = true;
+            if (board[0][0] == 'O') oWins = true;
+        }
+        if (board[0][2] == board[1][1] && board[1][1] == board[2][0]) {
+            if (board[0][2] == 'X') xWins = true;
+            if (board[0][2] == 'O') oWins = true;
+        }
+
+        // Determine and return the status
+        if ((xWins && oWins) || Math.abs(xCount - oCount) > 1) {
+            status = "Impossible";
+        } else if (xWins) {
+            status = "X wins";
+        } else if (oWins) {
+            status = "O wins";
+        } else if (hasEmpty) {
+            status = "Game not finished";
+        } else {
+            status = "Draw";
+        }
+
+        return status;
+    }
+
+    static char selectPlayer(char player) {
+        return player == 'X' ? 'O' : 'X';
     }
 }
