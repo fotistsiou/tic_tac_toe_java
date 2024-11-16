@@ -66,4 +66,4 @@ to get it built. Here’s what awaits you:
   * Stage Topics:
     * Multiple conditions: switch
 
-> **Source**: [Project of the Hyperskill.org platform](https://hyperskill.org/projects/48)
+> **Source**: [Project of the Hyperskill.org platform](https://hyperskill.org/projects/48?track=8)
