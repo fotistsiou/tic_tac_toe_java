@@ -50,7 +50,7 @@ public class Main {
         int xCount = 0, oCount = 0;
         boolean xWins = false, oWins = false, hasEmpty = false;
         String status = "";
-        // Check if game is finished
+        // Check if the game is over
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 if (board[i][j] == 'X') xCount++;
