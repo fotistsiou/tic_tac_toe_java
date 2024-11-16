@@ -1,4 +1,6 @@
 # Simple Tic-Tac-Toe (Java)
+**Level**: 🌟🌟 Medium | **Time**: 🕒 ~11 hours
+
 After finishing this project, you'll get to know a lot about planning and developing a complex program from scratch, 
 using methods, nested lists, list comprehension, handling errors, and processing user input.
 
