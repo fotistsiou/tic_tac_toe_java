@@ -72,7 +72,7 @@ public class Main {
                 // Check 2 for xAxis: The grid boundaries
                 if (xAxis < 1 || xAxis > 3) {
                     System.out.println("Coordinates should be from 1 to 3!");
-                    scanner.nextLine();
+                    scanner.nextLine(); // Clear invalid input from the scanner buffer
                     continue;
                 }
 
@@ -83,25 +83,26 @@ public class Main {
                     // Check 2 for yAxis: The grid boundaries
                     if (yAxis < 1 || yAxis > 3) {
                         System.out.println("Coordinates should be from 1 to 3!");
-                        scanner.nextLine();
+                        scanner.nextLine(); // Clear invalid input from the scanner buffer
                         continue;
                     }
 
                     // Check 3 for xAxis & yAxis: Cell Occupied
                     if (board[xAxis-1][yAxis-1] != ' ') {
                         System.out.println("This cell is occupied! Choose another one!");
-                        scanner.nextLine();
+                        scanner.nextLine(); // Clear invalid input from the scanner buffer
                         continue;
                     }
 
+                    // Exit from while loop
                     break;
                 } else {
                     System.out.println("You should enter numbers!");
-                    scanner.nextLine();
+                    scanner.nextLine(); // Clear invalid input from the scanner buffer
                 }
             } else {
                 System.out.println("You should enter numbers!");
-                scanner.nextLine();
+                scanner.nextLine(); // Clear invalid input from the scanner buffer
             }
         }
 
