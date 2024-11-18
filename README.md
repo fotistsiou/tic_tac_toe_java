@@ -1,8 +1,11 @@
 # Simple Tic-Tac-Toe (Java)
-**Level**: 🌟🌟 Medium | **Time**: 🕒 ~11 hours
 
-After finishing this project, you'll get to know a lot about planning and developing a complex program from scratch, 
-using methods, nested lists, list comprehension, handling errors, and processing user input.
+## Project Details
+> * **Level**: 🌟🌟 Medium | **Time**: 🕒 ~11 hours
+> * **Course**: [Introduction to Java](https://hyperskill.org/courses/8-introduction-to-java)
+> * **Project**: [Simple Tic-Tac-Toe (Java)](https://hyperskill.org/projects/48?track=8)
+> * **Description**: After finishing this project, you'll get to know a lot about planning and developing a complex 
+program from scratch, using methods, nested lists, list comprehension, handling errors, and processing user input.
 
 ## About
 Everybody remembers this paper-and-pencil game from childhood: Tic-Tac-Toe, also known as Noughts and crosses or Xs and 
@@ -68,5 +71,3 @@ to get it built. Here’s what awaits you:
   * Finally! Thanks to this app, you can always challenge a friend to play a quick game of Tic-Tac-Toe!
   * Stage Topics:
     * Multiple conditions: switch
-
-> **Project powered by** [Hyperskill.org](https://hyperskill.org/projects/48?track=8)
