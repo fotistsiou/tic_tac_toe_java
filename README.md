@@ -1,7 +1,7 @@
 # Simple Tic-Tac-Toe (Java)
 
 ## Project Details
-> - **Level**: 🌟🌟 Medium | **Time**: 🕒 ~11 hours
+> - **Level**: 🌟🌟 Medium | **Time**: 🕒 ~10 hours
 > - **Course**: [Introduction to Java](https://hyperskill.org/courses/8-introduction-to-java)
 > - **Project**: [Simple Tic-Tac-Toe (Java)](https://hyperskill.org/projects/48?track=8)
 > - **Description**: After finishing this project, you'll get to know a lot about planning and developing a complex 
@@ -54,10 +54,11 @@ to get it built. Here’s what awaits you:
     - Comparing values. Relational operators
     - Conditional statement
     - One-line condition with ternary operator
-    - While and do-while loops
     - For loop
+    - While and do-while loops
     - Break and continue. Branching
     - Iterating over arrays
+    - IDE
     - Multidimensional array
     - IntelliJ IDEA
     - IntelliJ IDEA basics
@@ -70,5 +71,3 @@ to get it built. Here’s what awaits you:
     - Errors in programs
 - Stage 5/5: Fight!
   - Finally! Thanks to this app, you can always challenge a friend to play a quick game of Tic-Tac-Toe!
-  - Stage Topics:
-    - Multiple conditions: switch
